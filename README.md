@@ -2,6 +2,7 @@
 
 ## Preview 
 
+![screenshot](https://imgur.com/iuWhQOZ.gif)
 <img src="https://imgur.com/iuWhQOZ.gif" alt="screenshot" width="200"/>
 <img src="https://user-images.githubusercontent.com/40175952/126643117-266b003b-1dc4-4ae0-ba6b-5ade42f65f02.png" alt="screenshot" width="200"/>
 <img src="https://user-images.githubusercontent.com/40175952/126643135-40ffc18f-b21c-47ad-9cf1-bafd58ef2459.png" alt="screenshot" width="200"/>
