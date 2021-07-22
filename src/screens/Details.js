@@ -14,7 +14,7 @@ const Details = ({navigation, route}) => {
       <Card
         title={route.params.original_title || route.params.name}
         subtitle={route.params.original_language.toUpperCase()}
-        description={route.params.overview}
+        description={`${route.params.overview.substring(0, 400)}...`}
         navigation={navigation}></Card>
     </View>
   );
