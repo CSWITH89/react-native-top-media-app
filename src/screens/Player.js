@@ -15,7 +15,9 @@ const Player = () => {
         onBuffer={this.onBuffer} // Callback when remote video is buffering
         onError={this.videoError} // Callback when video cannot be loaded
         style={styles.backgroundVideo}
+        controls={true}
         fullscreenAutorotate={true}
+        fullscreenOrientation="landscape"
       />
     </View>
   );
