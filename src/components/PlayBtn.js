@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH * 0.16,
     backgroundColor: '#779ecb',
     borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {API_KEY} from '@env';
+// Keys stored in RN env
 import {CarouselX as Carousel, SectionTitle, CategoryCard} from '../components';
 
 const Dashboard = ({navigation}) => {
@@ -10,20 +11,30 @@ const Dashboard = ({navigation}) => {
 
   useEffect(() => {
     const queryMovies = async () => {
-      const response = await (
-        await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc`,
-        )
-      ).json();
-      setMovieData(response);
+      try {
+        const response = await (
+          await fetch(
+            `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc`,
+          )
+        ).json();
+        setMovieData(response);
+      } catch (e) {
+        console.error(e);
+        // Rollbar here later for errors
+      }
     };
     const queryTvShows = async () => {
-      const response = await (
-        await fetch(
-          `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc`,
-        )
-      ).json();
-      setTvData(response);
+      try {
+        const response = await (
+          await fetch(
+            `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc`,
+          )
+        ).json();
+        setTvData(response);
+      } catch (e) {
+        console.error(e);
+        // Rollbar here later for errors
+      }
     };
 
     queryMovies();
@@ -32,7 +43,6 @@ const Dashboard = ({navigation}) => {
 
   useEffect(() => {
     if (movieData && tvData) setLoading(false);
-    console.log(tvData);
   }, [movieData, tvData]);
 
   return (
@@ -58,9 +68,11 @@ const Dashboard = ({navigation}) => {
             />
             <SectionTitle>categories</SectionTitle>
             <ScrollView horizontal>
+              {/* With more categories in future we could map through genre objects into category cards  */}
               <CategoryCard title="family" />
               <CategoryCard title="documentary" />
               <CategoryCard title="family" />
+              <CategoryCard title="documentary" />
             </ScrollView>
           </>
         ) : (

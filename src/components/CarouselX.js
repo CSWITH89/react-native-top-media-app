@@ -16,6 +16,7 @@ const CarouselX = ({data, navigation, ...rest}) => {
       onPress={() => navigation.navigate('Details', item)}
       style={{flex: 1}}>
       <View style={styles.item}>
+        {/* backdrop path selected instead of poster path because of better aesthetic for carousel */}
         <Image
           resizeMode="cover"
           style={styles.image}
@@ -25,6 +26,7 @@ const CarouselX = ({data, navigation, ...rest}) => {
               : 'https://wallpaperaccess.com/full/2588754.jpg',
           }}></Image>
         <View style={styles.textWrapper}>
+          {/* overview text is cut back to 100 characters to avoid overrunning and need for scroll */}
           <Text style={styles.overview}>{`${item.overview.substring(
             0,
             100,

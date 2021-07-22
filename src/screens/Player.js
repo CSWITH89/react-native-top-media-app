@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Video from 'react-native-video';
 
 const Player = () => {
   return (
     <View style={styles.container}>
+      {/* RN Video fully implemented however fullscreenAutorotate on load issue  */}
       <Video
         source={{
           uri: 'https://rawgit.com/mediaelement/mediaelement-files/master/big_buck_bunny.mp4',

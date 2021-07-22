@@ -6,6 +6,7 @@ import MarqueeText from 'react-native-marquee';
 const CategoryCard = ({title}) => {
   return (
     <View style={styles.container}>
+      {/* Marquee text used for longer category names as a nice effect  */}
       <MarqueeText
         style={styles.categoryTitle}
         duration={3000}

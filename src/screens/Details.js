@@ -10,12 +10,15 @@ const Details = ({navigation, route}) => {
         style={styles.image}
         source={{
           uri: `https://image.tmdb.org/t/p/w500${route.params.poster_path}`,
-        }}></Image>
+        }}
+      />
       <Card
         title={route.params.original_title || route.params.name}
         subtitle={route.params.original_language.toUpperCase()}
+        // overview limited to 400 characters to avoid overunning and scroll
         description={`${route.params.overview.substring(0, 400)}...`}
-        navigation={navigation}></Card>
+        navigation={navigation}
+      />
     </View>
   );
 };
