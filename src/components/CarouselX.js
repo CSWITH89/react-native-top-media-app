@@ -20,7 +20,9 @@ const CarouselX = ({data, navigation, ...rest}) => {
           resizeMode="cover"
           style={styles.image}
           source={{
-            uri: `https://image.tmdb.org/t/p/w500${item.backdrop_path}`,
+            uri: item.backdrop_path
+              ? `https://image.tmdb.org/t/p/w500${item.backdrop_path}`
+              : 'https://wallpaperaccess.com/full/2588754.jpg',
           }}></Image>
         <View style={styles.textWrapper}>
           <Text style={styles.overview}>{`${item.overview.substring(

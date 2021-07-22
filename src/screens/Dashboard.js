@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {API_KEY} from '@env';
-import {CarouselX as Carousel, SectionTitle} from '../components';
+import {CarouselX as Carousel, SectionTitle, CategoryCard} from '../components';
 
 const Dashboard = ({navigation}) => {
   const [loading, setLoading] = useState(true);
@@ -57,6 +57,11 @@ const Dashboard = ({navigation}) => {
               autoplayInterval={8000}
             />
             <SectionTitle>categories</SectionTitle>
+            <ScrollView horizontal>
+              <CategoryCard title="family" />
+              <CategoryCard title="documentary" />
+              <CategoryCard title="family" />
+            </ScrollView>
           </>
         ) : (
           <Text>Loading...</Text>

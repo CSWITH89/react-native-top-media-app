@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {Card} from '../components';
 
 const Details = ({navigation, route}) => {
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: '#77DD77',
   },
   image: {
     height: '100%',
